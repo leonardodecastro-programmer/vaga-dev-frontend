@@ -1,7 +1,9 @@
 ![AchieveMore](https://repository-images.githubusercontent.com/206639778/70226b80-d327-11e9-9bc8-b1024837da4c)
 
 ### Detalhes do teste:
-Crie uma tela de login utilizando uma [API](https://reqres.in/) pública para simular o login e um dashboard para listar os usuários utilizando o [Graphql](https://github.com/graphql-kit/graphql-apis).
+[Figma](https://www.figma.com/design/tY5s2KK19hcHNENJNyE1lx/Vaga-Front-end?node-id=0-1&m=dev&t=pz3OpILGhmk7lXLw-1)
+
+Desenvolva uma pequena aplicação seguindo o template do figma acima, crie um login utilizando uma [API](https://reqres.in/) pública para simular o login e um dashboard para listar os usuários utilizando o [Graphql](https://github.com/graphql-kit/graphql-apis).
 Você irá realizar um **fork** neste repositório e após o termino do desenvolvimento, realizar um **pull request** para análise do time. Não deixe para fazer o commit apenas no final, nossa equipe irá avaliar seu código desde o seu primeiro commit.
 
 Pedimos que trabalhe sozinho e não divulgue o resultado na internet.
