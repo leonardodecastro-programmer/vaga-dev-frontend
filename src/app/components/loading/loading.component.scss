@@ -1,0 +1,18 @@
+.loading-spinner {
+    width: 20px; /* Tamanho do spinner pode ser ajustado */
+    height: 20px; /* Tamanho do spinner pode ser ajustado */
+    border: 3.5px solid rgba(0, 0, 0, 0.1);
+    border-top: 3.5px solid rgba(94, 114, 228);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

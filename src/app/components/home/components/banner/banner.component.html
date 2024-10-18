@@ -1,0 +1,38 @@
+<div class="banner">
+    <nav class="navbar">
+        <h3 class="logo">Vaga Front-end AchieveMore</h3>
+        <ul class="nav-links">
+            <li (click)="toggleActive(0)">
+                <a href="#home">Institucional</a>
+                <svg 
+                    width="10" 
+                    height="6" 
+                    viewBox="0 0 10 6" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    [ngClass]="{'active': actives[0]}"
+                >
+                    <path d="M1 0.585815L5.24264 4.82846L9.48528 0.585815" stroke="white"/>
+                </svg>    
+            </li>
+            <li (click)="toggleActive(1)">
+                <a href="#about">Produtos</a>
+                <svg 
+                    width="10" 
+                    height="6" 
+                    viewBox="0 0 10 6" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    [ngClass]="{'active': actives[1]}"
+                >
+                    <path d="M1 0.585815L5.24264 4.82846L9.48528 0.585815" stroke="white"/>
+                </svg>
+            </li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Bem vindo(a)</h1>
+        <p>Use esse formulário para fazer login</p>
+    </div>
+</div>
