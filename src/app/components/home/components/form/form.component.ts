@@ -36,30 +36,28 @@ export class FormComponent {
       this.handleFormValidationErrors();
       return;
     }
-
+  
     this.isLoading = true;
-
+  
     const { email, senha } = this.loginForm.value;
-
+  
     this.authService.getUsersData().subscribe({
       next: (items: Item[]) => {
         this.isLoading = false;
         this.resetFormErrors();
-
-        const userByEmail = items.find(item => item.email === email);
-        const userByPassword = items.find(item => item.password === senha);
-
-        if (!userByEmail) {
-          this.formErrors.emailNotFound = true;
-        }
-
-        if (!userByPassword) {
-          this.formErrors.passwordNotFound = true;
-        }
-
-        if (userByEmail && userByPassword) {
-          console.log('Usuário autenticado:', userByEmail);
-          this.router.navigate(['/dashboard']);
+  
+        const user = items.find(item => item.email === email && item.password === senha);
+  
+        if (!user) {
+          this.formErrors.emailNotFound = !items.some(item => item.email === email);
+          this.formErrors.passwordNotFound = !items.some(item => item.password === senha);
+        } else {
+          console.log('Usuário autenticado:', user);
+          if (this.authService.authenticate(email, senha, items)) {
+            this.router.navigate(['/dashboard']);
+          } else {
+            console.error('Erro ao autenticar usuário');
+          }
         }
       },
       error: (error) => {
@@ -68,6 +66,7 @@ export class FormComponent {
       }
     });
   }
+  
 
   handleFormValidationErrors() {
     this.formErrors.emailRequired = this.loginForm.get('email')?.hasError('required') || false;

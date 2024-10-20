@@ -1,0 +1,14 @@
+.dashboard {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    padding: 16px;
+    gap: 31px;
+
+    background: linear-gradient(#5E72E4 236.95px, transparent 0);
+    background-repeat: no-repeat;
+    
+    &__main {
+        width: 100%;
+    }
+}

@@ -1,0 +1,188 @@
+.user-list {
+    padding-top: 24px;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 15px;
+  
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      &__text {
+        padding: 0 24px;
+      }
+  
+      &__text__title {
+        font-size: 20px;
+        color: #172B4D;
+        font-weight: 600;
+        margin-bottom: 9px;
+      }
+  
+      &__text__description {
+        font-size: 14px;
+        color: #172B4D;
+      }
+  
+      &__controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 0.8px solid #DEE2E6;
+        border-bottom: 0.8px solid #DEE2E6;
+        padding: 8px 24px;
+        margin-top: 24px;
+  
+        &__entries {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            p {
+                color: #8392AB;
+            }
+
+            &__options {
+                    padding: 6px 12px;
+                    font-size: 14px;
+                    border: 1px solid #E9EAED;
+                    border-radius: 4px;
+                    color: #8392AB;
+                    width: 55px;
+                    height: 33px;
+                    line-height: 18px;
+                    appearance: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+
+                    background-image: url('../../../../../assets/arrow.svg');
+                    background-repeat: no-repeat;
+                    background-position: right 12px center;
+                    background-size: 10px 20px;
+
+                    *::-ms-expand {
+                        display: none;
+                    }
+                }
+            }
+    
+            &__search {
+                padding: 10px 15px;
+                border-radius: 8px;
+                border: 1px solid #E9ECEF;
+                font-size: 14px;
+
+                &::placeholder {
+                    color: #8392AB;
+                }
+            }
+      }
+    }
+  
+    &__table {
+      width: 100%;
+      border-collapse: collapse;
+  
+      &-header {
+        text-align: left;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 16px 0;
+        border-bottom: 0.8px solid #DEE2E6;
+        color: #8392AB;
+
+        &:first-child {
+            padding-left: 24px;
+          }
+          
+        &:last-child {
+            padding-right: 24px;
+        }
+      }
+
+      &-data {
+        text-align: left;
+        font-size: 14px;
+        padding: 16px 0;
+        border-bottom: 0.8px solid #DEE2E6;
+        color: #8392AB;
+
+        &:first-child {
+            padding-left: 24px;
+          }
+          
+        &:last-child {
+            padding-right: 24px;
+        }
+      }
+    }
+  
+    &__pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+
+            span {
+                color: #8392AB;
+                font-size: 14px;
+            }
+  
+            &-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            background-color: transparent;
+            border: 1px solid #E9ECEF;
+            color: #8392AB;
+            cursor: pointer;
+            transition: border-color 0.3s, color 0.3s;
+            box-shadow: 0px 4px 6px 0px #00000014;
+            box-shadow: 0px 4px 4px 0px #00000014;
+
+
+            &-container {
+                display: flex;
+                gap: 6px;
+            }
+
+            &:first-child {
+                border-color: #8392AB;
+                }
+                
+            &:last-child {
+                border-color: #8392AB;
+            }
+
+            path {
+                transition: stroke 0.3s;
+            }
+
+            &:hover:not(&--active) {
+                border: 1px solid #5E72E4;
+                color: #5E72E4;
+
+                path {
+                    stroke: #5E72E4;
+                }
+            }
+
+            &--active {
+                background: linear-gradient(124deg, #5E72E4 -1.8%, #825EE4 105.23%);
+                border: none;
+                color: #ffffff;
+
+                path {
+                    stroke: #ffffff;
+                }
+            }
+        }
+    }
+  }
+  

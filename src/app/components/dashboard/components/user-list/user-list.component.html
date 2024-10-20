@@ -1,0 +1,80 @@
+<div class="user-list">
+    <div class="user-list__header">
+        <div class="user-list__header__text">
+            <h1 class="user-list__header__text__title">Listagem de usuários</h1>
+            <p class="user-list__header__text__description">Visualização dos usuários cadastrados.</p>
+        </div>
+        <div class="user-list__header__controls">
+            <div class="user-list__header__controls__entries">
+                <select class="user-list__header__controls__entries__options">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                </select>
+                <p>entradas por página</p>
+            </div>
+            <input class="user-list__header__controls__search" type="text" placeholder="Pesquise aqui...">
+        </div>
+    </div>
+
+    <table class="user-list__table">
+        <thead class="user-list__table-head">
+            <tr>
+                <th class="user-list__table-header">Nome</th>
+                <th class="user-list__table-header">Cargo</th>
+                <th class="user-list__table-header">Escritório</th>
+                <th class="user-list__table-header">Idade</th>
+                <th class="user-list__table-header">Data de início</th>
+                <th class="user-list__table-header">Salário</th>
+            </tr>
+        </thead>
+        <tbody class="user-list__table-body">
+            <tr class="user-list__table-row">
+                <td class="user-list__table-data">Lucas Andrade</td>
+                <td class="user-list__table-data">Diretor</td>
+                <td class="user-list__table-data">São Paulo</td>
+                <td class="user-list__table-data">61</td>
+                <td class="user-list__table-data">12/02/1952</td>
+                <td class="user-list__table-data">R$ 100.000</td>
+            </tr>
+            <!-- Repetir para os outros usuários -->
+        </tbody>
+    </table>
+
+    <div class="user-list__pagination">
+        <span>Mostrando 1 a 10 de 57 entradas</span>
+        <div class="user-list__pagination-btn-container">
+            <button class="user-list__pagination-btn">
+                <svg 
+                width="6" 
+                height="6" 
+                viewBox="0 0 10 6" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                style="transform: rotate(90deg);"
+                >
+                    <path d="M1 0.585815L5.24264 4.82846L9.48528 0.585815" stroke="#8392AB"/>
+                </svg>
+            </button>
+            <button 
+                *ngFor="let page of pages; let i = index" 
+                class="user-list__pagination-btn"
+                [ngClass]="{'user-list__pagination-btn--active': currentPage === page}"
+                (click)="setCurrentPage(page)"
+            >
+                {{ page }}
+            </button>
+            <button class="user-list__pagination-btn">
+                <svg 
+                width="6" 
+                height="6" 
+                viewBox="0 0 10 6" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                style="transform: rotate(-90deg);"
+                >
+                    <path d="M1 0.585815L5.24264 4.82846L9.48528 0.585815" stroke="#8392AB"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
