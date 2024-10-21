@@ -1,3 +1,12 @@
+svg {
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
+
+  &.active {
+    transform: rotate(0deg);
+  }
+}
+
 .side-nav {
   height: 750px;
   width: 289px;
@@ -21,16 +30,20 @@
 
   &__dashboard {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 18.8px 24px;
-    margin-bottom: 8px;
 
     &-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 18.8px 24px;
       width: 100%;
+
+      svg {
+        cursor: pointer;
+      }
 
       div {
         display: flex;
@@ -45,41 +58,92 @@
         }
       }
     }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      gap: 25.6px;
+      margin-top: 8px;
+      width: 100%;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+
+      span {
+        font-size: 12px;
+        margin-left: 24px;
+        font-weight: 700;
+        color: #8591A4;
+        cursor: pointer;
+        width: fit-content;
+      }
+
+      &.active {
+        max-height: 18px;
+        opacity: 1;
+      }
+    }
   }
 
+  &__users {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
-  &__manage {
-    > span {
-      font-size: 12px;
-      font-weight: 700;
-      margin-left: 24px;
-      color: #8591A4;
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 18.8px 24px;
+
+      svg {
+        cursor: pointer;
+      }
+
+      div {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        font-size: 14px;
+        color: #172B4D;
+
+        img {
+          width: 16px;
+          height: 15.33px;
+        }
+      }
     }
 
-    &__users {
+    &-body {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18.8px 24px;
-      margin-bottom: 8px;
+      flex-direction: column;
+      gap: 25.6px;
+      margin-top: 8px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      width: 100%;
 
-      &-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-  
-        div {
-          display: flex;
-          gap: 16px;
-          align-items: center;
-          font-size: 14px;
-          color: #172B4D;
-  
-          img {
-            width: 16px;
-            height: 15.33px;
-          }
+      &.active {
+        max-height: 67.58px;
+        opacity: 1;
+      }
+
+      span {
+        font-size: 14px;
+        margin-left: 56px;
+        color: #6C757D;
+        cursor: pointer;
+        width: fit-content;
+
+        
+        
+        &:hover {
+          color: #5E72E4;
         }
       }
     }

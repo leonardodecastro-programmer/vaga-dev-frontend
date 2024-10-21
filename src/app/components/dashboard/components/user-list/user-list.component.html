@@ -28,20 +28,19 @@
             </tr>
         </thead>
         <tbody class="user-list__table-body">
-            <tr class="user-list__table-row">
-                <td class="user-list__table-data">Lucas Andrade</td>
-                <td class="user-list__table-data">Diretor</td>
-                <td class="user-list__table-data">São Paulo</td>
-                <td class="user-list__table-data">61</td>
-                <td class="user-list__table-data">12/02/1952</td>
-                <td class="user-list__table-data">R$ 100.000</td>
+            <tr class="user-list__table-row" *ngFor="let user of paginatedData">
+                <td class="user-list__table-data">{{ user.name }}</td>
+                <td class="user-list__table-data">{{ user.position }}</td>
+                <td class="user-list__table-data">{{ user.city }}</td>
+                <td class="user-list__table-data">{{ user.age }}</td>
+                <td class="user-list__table-data">{{ user.inicialData }}</td>
+                <td class="user-list__table-data">{{ user.salary }}</td>
             </tr>
-            <!-- Repetir para os outros usuários -->
         </tbody>
     </table>
 
     <div class="user-list__pagination">
-        <span>Mostrando 1 a 10 de 57 entradas</span>
+        <span>Mostrando {{ startIndex }} a {{ endIndex }} de {{ totalEntries }} entradas</span>
         <div class="user-list__pagination-btn-container">
             <button class="user-list__pagination-btn">
                 <svg 
@@ -55,12 +54,10 @@
                     <path d="M1 0.585815L5.24264 4.82846L9.48528 0.585815" stroke="#8392AB"/>
                 </svg>
             </button>
-            <button 
-                *ngFor="let page of pages; let i = index" 
-                class="user-list__pagination-btn"
-                [ngClass]="{'user-list__pagination-btn--active': currentPage === page}"
-                (click)="setCurrentPage(page)"
-            >
+            <button *ngFor="let page of pages" 
+                    class="user-list__pagination-btn"
+                    [ngClass]="{'user-list__pagination-btn--active': currentPage === page}"
+                    (click)="setCurrentPage(page)">
                 {{ page }}
             </button>
             <button class="user-list__pagination-btn">

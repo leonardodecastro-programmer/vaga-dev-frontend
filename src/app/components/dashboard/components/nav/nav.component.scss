@@ -23,6 +23,28 @@
     }
 
     &__options {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        img {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }
+
+        &__user-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            h1 {
+                color: #ffffff;
+                font-size: 14px;
+                font-weight: normal;
+            }
+        }
+
         &__search-container {
             position: relative;
             width: 240px;

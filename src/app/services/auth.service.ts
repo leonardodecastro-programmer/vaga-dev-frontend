@@ -7,14 +7,19 @@ export interface Item {
   username: string;
   password: string;
   email: string;
+  name: string;
+  age: number;
+  city: string;
+  inicialData: string;
+  salary: number;
+  position: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = "https://run.mocky.io/v3/1c7a0177-d67f-4a2a-8f03-abfd66b5209b";
-  private readonly TOKEN_KEY = 'auth_token';
+  private apiUrl = "https://run.mocky.io/v3/f3a7f246-551f-4188-a1d8-8999f1931ab4";
 
   constructor(private http: HttpClient) { }
 
@@ -31,16 +36,22 @@ export class AuthService {
     const user = users.find(u => u.email === email && u.password === password);
     if (user) {
       localStorage.setItem('user', 'mock-token');
+      localStorage.setItem('userName', user.name);
       return true;
     }
     return false;
   }
-  
+
   isAuthenticated(): boolean {
     return !!localStorage.getItem('user');
   }
 
+  getAuthenticatedUserName(): string | null {
+    return localStorage.getItem('userName');
+  }
+
   logout(): void {
     localStorage.removeItem('user');
+    localStorage.removeItem('userName');
   }
 }
